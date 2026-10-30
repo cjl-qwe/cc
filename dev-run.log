@@ -1,0 +1,952 @@
+
+> doupo-app@1.0.0 dev
+> concurrently -n server,client -c yellow,cyan "npm run dev --prefix server" "npm run dev --prefix client"
+
+[client] 
+[client] > doupo-client@1.0.0 dev
+[client] > vite
+[client] 
+[server] 
+[server] > doupo-server@2.0.0 dev
+[server] > node --watch src/index.js
+[server] 
+[server] [2026-10-30T05:48:28.745Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T05:48:28.826Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T05:48:28.842Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T05:48:28.842Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T05:48:28.842Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[client] [2m13:48:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+[client] 
+[client]   [32m[1mVITE[22m v6.4.4[39m  [2mready in [0m[1m1594[22m[2m[0m ms[22m
+[client] 
+[client]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[client]   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.68.56:[1m5173[22m/[39m
+[client]   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.55.1:[1m5173[22m/[39m
+[client]   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.137.1:[1m5173[22m/[39m
+[client]   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.18.0.1:[1m5173[22m/[39m
+[server] [2026-10-30T05:48:35.508Z] INFO  [http:23e2b245e7b8eb7a] GET /api/health → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:48:35.802Z] INFO  [http:fe144cd0efc1031f] GET /api/auth/flames → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:48:50.375Z] INFO  [http:9ff9b1182cb0f5f2] GET /api/world/flames → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:42.085Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":114,"jti":"bc93bcf0-7a63-4aba-91ff-ea06acabd1a4"}
+[server] [2026-10-30T05:50:42.086Z] INFO  [http:326da275ebea6347] POST /api/auth/login → 200 {"ms":104.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:42.100Z] INFO  [http:af23536270aa5937] GET /api/cultivation/status → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:42.129Z] INFO  [http:5585d1f3d573e571] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:44.984Z] INFO  [service] 每日签到 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","streak":2,"gained":25,"exp":139}
+[server] [2026-10-30T05:50:44.986Z] INFO  [http:b7da322672a9fe03] POST /api/cultivation/checkin → 200 {"ms":6.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:44.999Z] INFO  [http:58127811c33348eb] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:45.006Z] INFO  [http:8ccde471d9caaa0c] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:49.826Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":140}
+[server] [2026-10-30T05:50:49.827Z] INFO  [http:ea0379039d6142d4] POST /api/cultivation/convert → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:49.837Z] INFO  [http:6be503561730a9fd] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:49.843Z] INFO  [http:ac445528bec04536] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:51.792Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":141}
+[server] [2026-10-30T05:50:51.793Z] INFO  [http:26b8867ea2003f0d] POST /api/cultivation/convert → 200 {"ms":4.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:51.803Z] INFO  [http:e071646e09b6a5cd] GET /api/cultivation/status → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:51.809Z] INFO  [http:0c0e179290caf1e3] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:55.728Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":142}
+[server] [2026-10-30T05:50:55.729Z] INFO  [http:57775f839715e2ab] POST /api/cultivation/convert → 200 {"ms":4.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:55.737Z] INFO  [http:8758d6e2a011cbeb] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:55.743Z] INFO  [http:e2c05d497a665e0b] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:57.522Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":143}
+[server] [2026-10-30T05:50:57.523Z] INFO  [http:56995e0fe4e6877f] POST /api/cultivation/convert → 200 {"ms":5.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:57.530Z] INFO  [http:bc73609bda5f23ed] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:50:57.540Z] INFO  [http:ca52d53895655d6a] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:06.961Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":144}
+[server] [2026-10-30T05:51:06.962Z] INFO  [http:628e87eaa1f7f46e] POST /api/cultivation/convert → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:06.971Z] INFO  [http:b930646e4bd61884] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:06.976Z] INFO  [http:367eaf72a26f5f52] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:08.505Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":145}
+[server] [2026-10-30T05:51:08.506Z] INFO  [http:4b9118a3f3815a55] POST /api/cultivation/convert → 200 {"ms":5.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:08.512Z] INFO  [http:76f8effdcd6865ce] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:08.521Z] INFO  [http:bbfc2ad06482cef9] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:10.166Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":146}
+[server] [2026-10-30T05:51:10.167Z] INFO  [http:438d8859d6e67da6] POST /api/cultivation/convert → 200 {"ms":6.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:10.178Z] INFO  [http:36068d925dd824e8] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:10.188Z] INFO  [http:8232c19a634a258a] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:11.620Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":147}
+[server] [2026-10-30T05:51:11.621Z] INFO  [http:66be671190af1dd4] POST /api/cultivation/convert → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:11.627Z] INFO  [http:14d85d1556172547] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:11.637Z] INFO  [http:eb408ad00e7f6a71] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:14.018Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":148}
+[server] [2026-10-30T05:51:14.019Z] INFO  [http:7f01895becea8bd4] POST /api/cultivation/convert → 200 {"ms":2.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:14.026Z] INFO  [http:530d7ee1ef350911] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:14.034Z] INFO  [http:0c8b44d0a7a5c4a6] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:15.752Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":149}
+[server] [2026-10-30T05:51:15.752Z] INFO  [http:ed4fd8477272291d] POST /api/cultivation/convert → 200 {"ms":3.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:15.758Z] INFO  [http:23e2fc6e26406697] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:15.764Z] INFO  [http:125576b20be5d2fb] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:17.643Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":150}
+[server] [2026-10-30T05:51:17.644Z] INFO  [http:987242c55e903972] POST /api/cultivation/convert → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:17.654Z] INFO  [http:6825fbd3eb41fdc9] GET /api/cultivation/status → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:17.659Z] INFO  [http:f7fe22062af92ea6] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:30.999Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":151}
+[server] [2026-10-30T05:51:31.000Z] INFO  [http:c5c1042b24381a61] POST /api/cultivation/convert → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:31.009Z] INFO  [http:c17b73691d8d919e] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:31.017Z] INFO  [http:6a52cec6ec28b86f] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:32.972Z] INFO  [http:eab35a9bb5d196ee] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:51:34.437Z] INFO  [http:725e739791eb37b3] GET /api/world/flames → 304 {"ms":0.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:52:11.998Z] INFO  [http:9804530f0178d21a] GET /api/world/ranks → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:52:13.183Z] INFO  [http:aa4b6fae1168cbad] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:53:19.413Z] INFO  [http:33b47a04d7ed1f65] GET /api/world/ranks → 304 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:54:09.941Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T05:54:09.942Z] INFO  [http:63900c31d15a9790] POST /api/auth/logout → 200 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T05:54:09.958Z] INFO  [http:32cec146f0fc530d] GET /api/world/flames → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[client] [2m13:57:10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:57:48[22m [31m[1m[vite][22m[39m [31mInternal server error: Element is missing end tag.[39m
+[client]   Plugin: [35mvite:vue[39m
+[client]   File: [36mC:/Users/Administrator/Desktop/cc-main/cc-main/cc-main_extracted/doupo-app/client/src/components/LoginForm.vue[39m:204:1
+[client] [33m  202|  </script>
+[client]   203|  
+[client]   204|  <style scoped>
+[client]      |   ^
+[client]   205|  .auth-form .content {
+[client]   206|    display: inline-flex;[39m
+[client]       at createCompilerError (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:1378:17)
+[client]       at emitError (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:3035:5)
+[client]       at Object.onend (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:2637:7)
+[client]       at Tokenizer.finish (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:1246:14)
+[client]       at Tokenizer.parse (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:1224:10)
+[client]       at Object.baseParse (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-core\dist\compiler-core.cjs.js:3074:13)
+[client]       at Object.parse (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-dom\dist\compiler-dom.cjs.js:913:23)
+[client]       at Object.parse$1 [as parse] (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\client\node_modules\@vue\compiler-sfc\dist\compiler-sfc.cjs.js:1918:24)
+[client]       at createDescriptor (file:///C:/Users/Administrator/Desktop/cc-main/cc-main/cc-main_extracted/doupo-app/client/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+[client]       at handleHotUpdate (file:///C:/Users/Administrator/Desktop/cc-main/cc-main/cc-main_extracted/doupo-app/client/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+[client] [2m13:59:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue[22m
+[client] [2m13:59:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/AuthPanel.vue[22m
+[server] [2026-10-30T05:59:31.534Z] INFO  [http:ed9358c314cfabee] GET /api/world/flames → 304 {"ms":0.6,"ip":"127.0.0.1"}
+[client] [2m13:59:42[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/AuthPanel.vue[22m
+[server] [2026-10-30T05:59:42.693Z] INFO  [http:65566ce1c22c9f4e] GET /api/world/flames → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[client] [2m14:00:12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/LoginForm.vue?vue&type=style&index=0&scoped=ba684ca4&lang.css[22m
+[server] [2026-10-30T06:00:19.992Z] INFO  [http:8e92370a971a878b] GET /api/health → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:01:11.974Z] INFO  [http:11d7386d7a7ce891] GET /api/world/flames → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:00.931Z] WARN  [service] 登录失败 {"name":"fhdh"}
+[server] [2026-10-30T06:02:00.932Z] DEBUG [http:f4297aa4be941cb4] 业务错误：名号或密钥有误，魂印无法共鸣。 {"status":401}
+[server] [2026-10-30T06:02:00.932Z] WARN  [http:f4297aa4be941cb4] POST /api/auth/login → 401 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:04.619Z] WARN  [service] 登录失败 {"name":"fhdh"}
+[server] [2026-10-30T06:02:04.619Z] DEBUG [http:4f91d042747721c1] 业务错误：名号或密钥有误，魂印无法共鸣。 {"status":401}
+[server] [2026-10-30T06:02:04.619Z] WARN  [http:4f91d042747721c1] POST /api/auth/login → 401 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:18.154Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":161,"jti":"85c3b296-2c2d-4c7a-abc3-43b12dea2057"}
+[server] [2026-10-30T06:02:18.155Z] INFO  [http:8740ec65a57552fb] POST /api/auth/login → 200 {"ms":79.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:18.163Z] INFO  [http:55d98f09e6da26d5] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:18.170Z] INFO  [http:385c0e82a778a811] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:28.191Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:02:28.191Z] INFO  [http:9bc141e306b1cb58] POST /api/auth/logout → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:02:28.208Z] INFO  [http:bde9899caeaaa995] GET /api/world/flames → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:08.682Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":171,"jti":"9a27d219-715e-4e5b-b9a6-56b3831c866a"}
+[server] [2026-10-30T06:06:08.682Z] INFO  [http:612ba998b61e5b4d] POST /api/auth/login → 200 {"ms":79,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:08.690Z] INFO  [http:4102dd3a258298ce] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:08.696Z] INFO  [http:5fa9af83c551aef2] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:10.560Z] INFO  [http:766aabdf8788ce8d] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:36.644Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:06:36.644Z] INFO  [http:63c9596971fc26ac] POST /api/auth/logout → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:06:36.660Z] INFO  [http:d31db1f435056525] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:07:27.798Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:07:27.870Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:07:27.888Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:07:27.888Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:07:27.888Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:07:40.046Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:07:40.120Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:07:40.138Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:07:40.138Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:07:40.138Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:07:46.838Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:07:46.909Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:07:46.923Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:07:46.923Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:07:46.923Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:07:55.190Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:07:55.264Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:07:55.277Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:07:55.277Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:07:55.277Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[client] [2m14:08:08[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/HallView.vue, /src/App.vue, /src/components/LoginForm.vue, /src/components/RegisterForm.vue, /src/components/ProfileSettings.vue, /src/components/QiGather.vue, /src/components/FlameCodex.vue, /src/components/RealmRoad.vue[22m
+[server] [2026-10-30T06:08:08.773Z] INFO  [http:c61a64228fff94fc] GET /api/world/flames → 304 {"ms":4.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:08:18.418Z] INFO  [http:5ec80e433033df93] GET /api/world/techniques → 200 {"ms":2.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:08:18.733Z] INFO  [http:ebaf0a11451b48f5] GET /api/world/techniques → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:08:49.414Z] INFO  [http:e603f731e68e6130] HEAD /api/world/techniques → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:08:49.863Z] INFO  [http:27d8c4dad52766f8] GET /api/world/techniques → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:06.654Z] INFO  [http:a8d4a7984786b857] GET /api/world/flames → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:13.436Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":181,"jti":"a5da030d-2785-4549-a8e2-cd82d74d5635"}
+[server] [2026-10-30T06:09:13.437Z] INFO  [http:c34d334091a29920] POST /api/auth/login → 200 {"ms":111.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:13.448Z] INFO  [http:2f9bb781b8a3d337] GET /api/cultivation/status → 200 {"ms":2.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:13.457Z] INFO  [http:7efe0517af182037] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:21.695Z] INFO  [http:8abea270f1a0f2c6] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":2.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:22.638Z] INFO  [http:cd9ba2165e16a3f7] GET /api/world/flames → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:23.702Z] INFO  [http:b6b3c311555589cd] GET /api/world/ranks → 304 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:48.583Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:09:48.584Z] INFO  [http:64a83f6d197f9409] POST /api/auth/logout → 200 {"ms":5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:09:48.601Z] INFO  [http:f077be9de1328639] GET /api/world/flames → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:05.438Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":191,"jti":"98498d8a-ac7b-4956-86f9-e5f8fee6998a"}
+[server] [2026-10-30T06:10:05.439Z] INFO  [http:65b9637b82783ee4] POST /api/auth/login → 200 {"ms":76,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:05.447Z] INFO  [http:16f126b2b2a39cec] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:05.453Z] INFO  [http:bfd0033fcdeab17b] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:20.085Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:10:20.085Z] INFO  [http:4a7e3a1d16022f4f] POST /api/auth/logout → 200 {"ms":3.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:20.096Z] INFO  [http:70520fe01a9a6608] GET /api/world/flames → 304 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:55.192Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":201,"jti":"ca750176-fb88-4b01-8054-d48f56c7638c"}
+[server] [2026-10-30T06:10:55.193Z] INFO  [http:a229d6419475280f] POST /api/auth/login → 200 {"ms":78.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:55.200Z] INFO  [http:aecb90c608d81baa] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:55.206Z] INFO  [http:a04e4284bf81dea8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:57.412Z] INFO  [http:184cd1d5bf664598] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:10:58.603Z] INFO  [http:4d2fc05e34dba75c] GET /api/world/flames → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:12:12.403Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:12:12.403Z] INFO  [http:beb9fb91565a16c3] POST /api/auth/logout → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:12:12.416Z] INFO  [http:065c79236073233e] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:12:55.395Z] INFO  [http:2bae6980687bf11f] GET /api/world/techniques → 200 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:13:14.885Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":211,"jti":"2bd9e8a2-b49e-49b0-befa-5e2f22b182ec"}
+[server] [2026-10-30T06:13:14.885Z] INFO  [http:8ccc0d08a1948ffb] POST /api/auth/login → 200 {"ms":75.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:13:14.893Z] INFO  [http:63bc9e82c133c9b1] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:13:14.899Z] INFO  [http:8f619d00a1080e8e] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:14:51.491Z] INFO  [http:3e9dcc13f1454193] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:06.926Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":212}
+[server] [2026-10-30T06:18:06.926Z] INFO  [http:470eed77c00fe7f4] POST /api/cultivation/convert → 200 {"ms":3.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:06.939Z] INFO  [http:4846b43d57b6751c] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:06.945Z] INFO  [http:d0041d7bdb7c863c] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:06.957Z] INFO  [http:d3022280f2a223fe] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:10.423Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":213}
+[server] [2026-10-30T06:18:10.423Z] INFO  [http:4adbc37d83dd3926] POST /api/cultivation/convert → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:10.430Z] INFO  [http:3642286e2f0be2c3] GET /api/cultivation/status → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:10.437Z] INFO  [http:038db635e85960d8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:10.443Z] INFO  [http:9734f507d4641dfe] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:13.141Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":214}
+[server] [2026-10-30T06:18:13.141Z] INFO  [http:4a04c1def95a0319] POST /api/cultivation/convert → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:13.149Z] INFO  [http:0bd09ca6d81f1e92] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:13.155Z] INFO  [http:0f4b9978869e2ca3] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:13.161Z] INFO  [http:5dcffdf82322d02a] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:15.399Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":215}
+[server] [2026-10-30T06:18:15.399Z] INFO  [http:9e8564ab0da84a59] POST /api/cultivation/convert → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:15.405Z] INFO  [http:c9cab5f8dc831329] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:15.410Z] INFO  [http:6f046286b6f739f2] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:15.420Z] INFO  [http:d9bc39732cefc9a6] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:17.788Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":216}
+[server] [2026-10-30T06:18:17.789Z] INFO  [http:d1a0f08a1648ac52] POST /api/cultivation/convert → 200 {"ms":5.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:17.795Z] INFO  [http:583e48a3d2f74157] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:17.807Z] INFO  [http:1a94e488e12e2baa] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:17.812Z] INFO  [http:ce71e76e127118d6] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:21.398Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":217}
+[server] [2026-10-30T06:18:21.400Z] INFO  [http:db22f921f40e3840] POST /api/cultivation/convert → 200 {"ms":5.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:21.411Z] INFO  [http:934df795118ea8ea] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:21.424Z] INFO  [http:5ec3c1760cd0eac9] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:21.432Z] INFO  [http:23d80cf8bde58171] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:23.005Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":218}
+[server] [2026-10-30T06:18:23.005Z] INFO  [http:d8f424ea35b604aa] POST /api/cultivation/convert → 200 {"ms":3.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:23.010Z] INFO  [http:54ff0c9408134b6a] GET /api/cultivation/status → 200 {"ms":0.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:23.023Z] INFO  [http:037362faea97bda8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:23.032Z] INFO  [http:6812ab6b3a983dec] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:26.723Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":219}
+[server] [2026-10-30T06:18:26.723Z] INFO  [http:656df3774ec6e47f] POST /api/cultivation/convert → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:26.728Z] INFO  [http:c52e47a4a5af0e7c] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:26.740Z] INFO  [http:a890b3eca2b266ae] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:26.748Z] INFO  [http:93c899e40638135e] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":2.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:28.832Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":220}
+[server] [2026-10-30T06:18:28.834Z] INFO  [http:13898e5303bf1a82] POST /api/cultivation/convert → 200 {"ms":6.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:28.840Z] INFO  [http:3feb73380609075a] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:28.845Z] INFO  [http:eb018e59e0dce8f7] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:28.859Z] INFO  [http:2f4b76a80407b1b8] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:31.142Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":221}
+[server] [2026-10-30T06:18:31.143Z] INFO  [http:f0578f24e031a75d] POST /api/cultivation/convert → 200 {"ms":3.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:31.155Z] INFO  [http:be48472803c2dd7d] GET /api/cultivation/status → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:31.161Z] INFO  [http:6383c5edf0e11f7d] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:31.175Z] INFO  [http:ed16fd5caef5eed0] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:33.822Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":222}
+[server] [2026-10-30T06:18:33.824Z] INFO  [http:f4590446d7a3fa90] POST /api/cultivation/convert → 200 {"ms":5.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:33.834Z] INFO  [http:9faa6ea0ffbe695b] GET /api/cultivation/status → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:33.842Z] INFO  [http:cda0cc4b96a34cd5] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:33.851Z] INFO  [http:56584260a48c59ca] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:36.181Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":223}
+[server] [2026-10-30T06:18:36.182Z] INFO  [http:dc2137141f66f70a] POST /api/cultivation/convert → 200 {"ms":5.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:36.191Z] INFO  [http:4a2c916bc4b67fee] GET /api/cultivation/status → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:36.200Z] INFO  [http:3b8cc8b2f7ae1cc8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:36.209Z] INFO  [http:277462c9d7863e6a] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:38.538Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":224}
+[server] [2026-10-30T06:18:38.539Z] INFO  [http:f8f7b4b812b43add] POST /api/cultivation/convert → 200 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:38.544Z] INFO  [http:848767652a38e88a] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:38.555Z] INFO  [http:64643e9c3fd255d1] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:38.561Z] INFO  [http:91ce0306fd48cb6a] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:41.041Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":225}
+[server] [2026-10-30T06:18:41.041Z] INFO  [http:64b68fd354c9f5d5] POST /api/cultivation/convert → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:41.051Z] INFO  [http:1207c403a43a25a6] GET /api/cultivation/status → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:41.060Z] INFO  [http:f3a717c9751de969] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:41.074Z] INFO  [http:da8f65e766781d12] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:43.909Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":226}
+[server] [2026-10-30T06:18:43.910Z] INFO  [http:91caa59d70061fd5] POST /api/cultivation/convert → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:43.922Z] INFO  [http:30190764b2631624] GET /api/cultivation/status → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:43.932Z] INFO  [http:431d53198641c16e] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:43.940Z] INFO  [http:7360eb4eb6c1747a] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:46.508Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":227}
+[server] [2026-10-30T06:18:46.509Z] INFO  [http:f028630a54c9a0d2] POST /api/cultivation/convert → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:46.518Z] INFO  [http:9d350938501d30db] GET /api/cultivation/status → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:46.525Z] INFO  [http:48904cfda764a510] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:46.534Z] INFO  [http:0a946cf405154fb3] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:51.178Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":228}
+[server] [2026-10-30T06:18:51.180Z] INFO  [http:b2aeb7f585489ba8] POST /api/cultivation/convert → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:51.190Z] INFO  [http:3b06b1d7192c3282] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:51.195Z] INFO  [http:3a98acc44955764a] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:51.208Z] INFO  [http:991039eea18ea1b1] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:53.477Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":229}
+[server] [2026-10-30T06:18:53.478Z] INFO  [http:11751172f4180b34] POST /api/cultivation/convert → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:53.489Z] INFO  [http:aa13eae6231db392] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:53.497Z] INFO  [http:9bece5246c0ab2fa] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:53.508Z] INFO  [http:8f6ed6ea70488fde] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:56.043Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":230}
+[server] [2026-10-30T06:18:56.043Z] INFO  [http:5d8b046667005103] POST /api/cultivation/convert → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:56.052Z] INFO  [http:920369077e38785e] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:56.058Z] INFO  [http:2fa1ff833a392a93] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:56.065Z] INFO  [http:65ec357376fc6319] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:58.551Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":231}
+[server] [2026-10-30T06:18:58.552Z] INFO  [http:3e4e35a57a69b168] POST /api/cultivation/convert → 200 {"ms":5.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:58.561Z] INFO  [http:24fdf5c7efc4e14d] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:58.571Z] INFO  [http:933b4174ec930a41] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:18:58.578Z] INFO  [http:c57abc956928aaaa] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:01.040Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":232}
+[server] [2026-10-30T06:19:01.041Z] INFO  [http:d6fa3aea61351b86] POST /api/cultivation/convert → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:01.053Z] INFO  [http:31ad642101d6cccb] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:01.060Z] INFO  [http:21f1a28ec98e961e] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:01.068Z] INFO  [http:a735433cfa2656b9] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:03.565Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":233}
+[server] [2026-10-30T06:19:03.566Z] INFO  [http:b2f0256be894641d] POST /api/cultivation/convert → 200 {"ms":4.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:03.575Z] INFO  [http:1db86ea6deffca06] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:03.583Z] INFO  [http:dcba22e56cf24be7] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:03.591Z] INFO  [http:8389d0cc284e2c03] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:06.221Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":234}
+[server] [2026-10-30T06:19:06.223Z] INFO  [http:ec9fc551511c540c] POST /api/cultivation/convert → 200 {"ms":6.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:06.231Z] INFO  [http:67ddc7f2f5919af2] GET /api/cultivation/status → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:06.241Z] INFO  [http:ed153a9ac87a17b3] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:06.248Z] INFO  [http:6b11ad2cd7d2063b] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:08.707Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":235}
+[server] [2026-10-30T06:19:08.707Z] INFO  [http:ba6aa2b493fd1ab3] POST /api/cultivation/convert → 200 {"ms":2.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:08.715Z] INFO  [http:048fcb9452cb1245] GET /api/cultivation/status → 200 {"ms":2.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:08.724Z] INFO  [http:19fab8c67376735f] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:08.733Z] INFO  [http:6ad8abe6d094f595] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:11.406Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":236}
+[server] [2026-10-30T06:19:11.407Z] INFO  [http:e8b2e825f3db2485] POST /api/cultivation/convert → 200 {"ms":2.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:11.421Z] INFO  [http:37f74c47aef60e61] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:11.431Z] INFO  [http:50b5f1f34065bf35] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:11.439Z] INFO  [http:56133fd7318c929d] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:14.154Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":237}
+[server] [2026-10-30T06:19:14.155Z] INFO  [http:67b9a7ab7e0a122f] POST /api/cultivation/convert → 200 {"ms":4.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:14.163Z] INFO  [http:8b5c5559013fa5f4] GET /api/cultivation/status → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:14.173Z] INFO  [http:584132c43a101578] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:14.179Z] INFO  [http:a14bf1175a3bd549] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:16.965Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":238}
+[server] [2026-10-30T06:19:16.966Z] INFO  [http:d899cdfd86cb16a6] POST /api/cultivation/convert → 200 {"ms":5.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:16.975Z] INFO  [http:5056c8bd93c8ccb0] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:16.986Z] INFO  [http:8c99f7a61fbd8ef8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:16.994Z] INFO  [http:7be36712a96fa29c] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:19.581Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":239}
+[server] [2026-10-30T06:19:19.583Z] INFO  [http:08fe6b58bd4e166f] POST /api/cultivation/convert → 200 {"ms":5.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:19.592Z] INFO  [http:2f6884a0b4abbc1a] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:19.601Z] INFO  [http:175a04872a60fc8c] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:19.609Z] INFO  [http:e7c12c5eea3b05f1] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:22.474Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":240}
+[server] [2026-10-30T06:19:22.475Z] INFO  [http:629bd00bc29fcbfd] POST /api/cultivation/convert → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:22.484Z] INFO  [http:f8c5d46067cad1fa] GET /api/cultivation/status → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:22.492Z] INFO  [http:7cd0891394761e5c] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:22.500Z] INFO  [http:ad2c632f95c10e40] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:19:24.410Z] INFO  [http:55ad7410cdb3e72b] GET /api/world/ranks → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:22:48.517Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:22:48.591Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:22:48.606Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:22:48.606Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:22:48.606Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\server\src\world\index.js:13
+[server] } = require('./techniques')
+[server] ^
+[server] 
+[server] SyntaxError: Unexpected token '}'
+[server]     at wrapSafe (node:internal/modules/cjs/loader:1637:18)
+[server]     at Module._compile (node:internal/modules/cjs/loader:1679:20)
+[server]     at Object..js (node:internal/modules/cjs/loader:1838:10)
+[server]     at Module.load (node:internal/modules/cjs/loader:1441:32)
+[server]     at Function._load (node:internal/modules/cjs/loader:1263:12)
+[server]     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[server]     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+[server]     at Module.require (node:internal/modules/cjs/loader:1463:12)
+[server]     at require (node:internal/modules/helpers:147:16)
+[server]     at Object.<anonymous> (C:\Users\Administrator\Desktop\cc-main\cc-main\cc-main_extracted\doupo-app\server\src\services\authService.js:14:32)
+[server] 
+[server] Node.js v22.22.2
+[server] Failed running 'src/index.js'. Waiting for file changes before restarting...
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:23:45.883Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:23:45.954Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:23:45.968Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:23:45.968Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:23:45.968Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:23:54.780Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:23:54.850Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:23:54.863Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:23:54.863Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:23:54.863Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:24:00.872Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:24:00.948Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:24:00.961Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:24:00.961Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:24:00.961Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:24:07.578Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:24:07.652Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:24:07.668Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:24:07.668Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:24:07.668Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:24:26.279Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:24:26.350Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:24:26.365Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:24:26.365Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:24:26.365Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:24:42.686Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:24:42.760Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:24:42.774Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:24:42.774Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:24:42.774Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:24:59.779Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:24:59.851Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:24:59.869Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:24:59.869Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:24:59.869Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:25:16.329Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:25:16.401Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:25:16.416Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:25:16.416Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:25:16.416Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:25:25.478Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:25:25.556Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:25:25.577Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:25:25.577Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:25:25.577Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:25:34.915Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:25:34.988Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:25:35.002Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:25:35.002Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:25:35.002Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:26:04.725Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:26:04.801Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:26:04.817Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:26:04.817Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:26:04.817Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:26:25.284Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:26:25.356Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:26:25.370Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:26:25.370Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:26:25.370Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:26:45.096Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:26:45.169Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:26:45.184Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:26:45.184Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:26:45.184Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:28:09.465Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:28:09.536Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:28:09.549Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:28:09.549Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:28:09.549Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:28:41.311Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:28:41.387Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:28:41.403Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:28:41.403Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:28:41.403Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:28:48.730Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:28:48.803Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:28:48.819Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:28:48.819Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:28:48.819Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:29:13.167Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:29:13.238Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:29:13.252Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:29:13.252Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:29:13.252Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:29:21.351Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:29:21.422Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:29:21.437Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:29:21.437Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:29:21.437Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:29:37.719Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:29:37.790Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:29:37.805Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:29:37.805Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:29:37.805Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[client] [2m14:30:08[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/HallView.vue, /src/App.vue, /src/components/LoginForm.vue, /src/components/RegisterForm.vue, /src/components/ProfileSettings.vue, /src/components/QiGather.vue, /src/components/FlameCodex.vue, /src/components/RealmRoad.vue[22m
+[server] [2026-10-30T06:30:08.819Z] INFO  [http:3ee381663a82f343] GET /api/auth/me → 200 {"ms":10.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:30:08.831Z] INFO  [http:0ad78ccb7a5aae0b] GET /api/cultivation/status → 200 {"ms":2.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:30:08.844Z] INFO  [http:5998678b5f6624e6] GET /api/cultivation/leaderboard?limit=20&offset=0 → 304 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:30:34.297Z] INFO  [http:7019eee7bdb2eebd] GET /api/world/techniques → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:41.231Z] INFO  [service] 新魂印刻下 {"userId":"9a57d34a-1fb5-4f65-840f-6d5862e95dea","name":"功法测试员_tech","flame":"qinglian","jti":"8451284a-4040-421d-963c-2f533ba40bb4"}
+[server] [2026-10-30T06:31:41.232Z] INFO  [http:306a6cf175e27937] POST /api/auth/register → 201 {"ms":99.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:41.474Z] INFO  [service] 魂印共鸣 {"userId":"9a57d34a-1fb5-4f65-840f-6d5862e95dea","name":"功法测试员_tech","exp":10,"jti":"3da554aa-8527-4f1d-8ccf-9fe12cdc3ff5"}
+[server] [2026-10-30T06:31:41.475Z] INFO  [http:e5828c9fb1ac07f7] POST /api/auth/login → 200 {"ms":76.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:41.648Z] INFO  [http:fc4e7f63c7a62514] GET /api/cultivation/status → 200 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:41.804Z] INFO  [service] 参悟功法 {"userId":"9a57d34a-1fb5-4f65-840f-6d5862e95dea","value":"fenjue","gained":12,"exp":22}
+[server] [2026-10-30T06:31:41.805Z] INFO  [http:4cec3af2c28b4245] POST /api/techniques/learn → 200 {"ms":4.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:41.965Z] INFO  [service] 参悟功法 {"userId":"9a57d34a-1fb5-4f65-840f-6d5862e95dea","value":"fonuhuolian","gained":156,"exp":178}
+[server] [2026-10-30T06:31:41.967Z] INFO  [http:9facf3705a462020] POST /api/techniques/learn → 200 {"ms":8.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:42.122Z] DEBUG [http:ca279b38a2d36935] 业务错误：此功法已参悟，无需重复修习。 {"status":409}
+[server] [2026-10-30T06:31:42.123Z] WARN  [http:ca279b38a2d36935] POST /api/techniques/learn → 409 {"ms":3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:31:42.279Z] ERROR [http:f150817284f66540] 未捕获异常 {"message":"world.techniqueOf is not a function","stack":"TypeError: world.techniqueOf is not a function\n    at C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\src\\routes\\techniques.js:34:24\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\node_modules\\express\\lib\\router\\index.js:280:10)"}
+[server] [2026-10-30T06:31:42.279Z] ERROR [http:f150817284f66540] GET /api/techniques/mine → 500 {"ms":1.4,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:32:19.257Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:32:19.329Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:32:19.343Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:32:19.343Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:32:19.343Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:32:33.321Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:32:33.395Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:32:33.410Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:32:33.410Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:32:33.410Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] [2026-10-30T06:32:40.323Z] DEBUG [http:81ddf08a1051943f] 业务错误：此名号已被他人占用，换一个吧。 {"status":409}
+[server] [2026-10-30T06:32:40.326Z] WARN  [http:81ddf08a1051943f] POST /api/auth/register → 409 {"ms":101.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:32:40.560Z] INFO  [service] 魂印共鸣 {"userId":"9a57d34a-1fb5-4f65-840f-6d5862e95dea","name":"功法测试员_tech","exp":188,"jti":"10adc228-4a80-4fb7-9a4c-a67d0445e7ea"}
+[server] [2026-10-30T06:32:40.560Z] INFO  [http:c2e2558490d17c75] POST /api/auth/login → 200 {"ms":78.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:32:40.719Z] INFO  [http:cb55e8e5bd93e89f] GET /api/cultivation/status → 200 {"ms":4.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:32:40.872Z] DEBUG [http:baae55d9d7de40d8] 业务错误：此功法已参悟，无需重复修习。 {"status":409}
+[server] [2026-10-30T06:32:40.873Z] WARN  [http:baae55d9d7de40d8] POST /api/techniques/learn → 409 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:20.621Z] INFO  [service] 新魂印刻下 {"userId":"34b11831-44f4-4617-ac12-0c4ce431c181","name":"功法测试员_1793342000","flame":"qinglian","jti":"568f416a-5020-4b65-98bd-cbd9d99a54fb"}
+[server] [2026-10-30T06:33:20.622Z] INFO  [http:1ac774e02a5f1470] POST /api/auth/register → 201 {"ms":74.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:20.850Z] INFO  [service] 魂印共鸣 {"userId":"34b11831-44f4-4617-ac12-0c4ce431c181","name":"功法测试员_1793342000","exp":10,"jti":"f33eca92-5efe-43f3-b7f5-bdb97dd3b485"}
+[server] [2026-10-30T06:33:20.851Z] INFO  [http:095089a59623155d] POST /api/auth/login → 200 {"ms":76.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.015Z] INFO  [http:14ad60b107e6a925] GET /api/cultivation/status → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.172Z] INFO  [service] 参悟功法 {"userId":"34b11831-44f4-4617-ac12-0c4ce431c181","value":"fenjue","gained":12,"exp":22}
+[server] [2026-10-30T06:33:21.172Z] INFO  [http:8efaf8d2554c01ba] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.331Z] INFO  [service] 参悟功法 {"userId":"34b11831-44f4-4617-ac12-0c4ce431c181","value":"fonuhuolian","gained":156,"exp":178}
+[server] [2026-10-30T06:33:21.333Z] INFO  [http:6e2ef2e5d8c84369] POST /api/techniques/learn → 200 {"ms":6.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.486Z] DEBUG [http:a0199ba7f71652f3] 业务错误：此功法已参悟，无需重复修习。 {"status":409}
+[server] [2026-10-30T06:33:21.487Z] WARN  [http:a0199ba7f71652f3] POST /api/techniques/learn → 409 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.666Z] INFO  [http:e070c292e62a5042] GET /api/techniques/mine → 200 {"ms":2.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.828Z] INFO  [http:054c021d81683141] POST /api/techniques/equip → 200 {"ms":6.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:33:21.984Z] INFO  [http:83f50adf34f04ade] GET /api/cultivation/status → 200 {"ms":1.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:34:02.673Z] INFO  [http:cf670dfad3d77c40] GET /api/techniques?grade=%e5%a4%a9%e9%98%b6 → 200 {"ms":0.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:34:03.020Z] INFO  [http:1f6b3f8542fb7239] GET /api/techniques?type=%e8%ba%ab%e6%b3%95 → 200 {"ms":0.5,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T06:35:37.214Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T06:35:37.284Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T06:35:37.299Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T06:35:37.299Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T06:35:37.299Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] [2026-10-30T06:35:55.509Z] INFO  [http:c030f50ce499311e] GET /api/techniques/fenjue → 200 {"ms":4.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:55.837Z] DEBUG [http:b9199738ecc9ebb7] 业务错误：武技功法图鉴中并无此式。 {"status":404}
+[server] [2026-10-30T06:35:55.837Z] WARN  [http:b9199738ecc9ebb7] GET /api/techniques/nope → 404 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:56.519Z] INFO  [service] 新魂印刻下 {"userId":"76e1a71a-a6c1-4931-91b3-8eff92b7f2f4","name":"功法测试员_1793342156","flame":"qinglian","jti":"4b100cac-738c-4e62-986f-b9d298a81823"}
+[server] [2026-10-30T06:35:56.520Z] INFO  [http:49901d5c0976650c] POST /api/auth/register → 201 {"ms":100.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:56.748Z] INFO  [service] 魂印共鸣 {"userId":"76e1a71a-a6c1-4931-91b3-8eff92b7f2f4","name":"功法测试员_1793342156","exp":10,"jti":"dba707b9-5c87-4240-a302-b567f47aee57"}
+[server] [2026-10-30T06:35:56.748Z] INFO  [http:8a21f3e02138184d] POST /api/auth/login → 200 {"ms":75.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:56.917Z] INFO  [http:6560a97f714d1ea6] GET /api/cultivation/status → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.086Z] INFO  [service] 参悟功法 {"userId":"76e1a71a-a6c1-4931-91b3-8eff92b7f2f4","value":"fenjue","gained":12,"exp":22}
+[server] [2026-10-30T06:35:57.088Z] INFO  [http:bab9c8b898ddd247] POST /api/techniques/learn → 200 {"ms":7.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.248Z] INFO  [service] 参悟功法 {"userId":"76e1a71a-a6c1-4931-91b3-8eff92b7f2f4","value":"fonuhuolian","gained":156,"exp":178}
+[server] [2026-10-30T06:35:57.249Z] INFO  [http:932f7e855d54fc71] POST /api/techniques/learn → 200 {"ms":7.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.406Z] DEBUG [http:e177ba3aa17fa182] 业务错误：此功法已参悟，无需重复修习。 {"status":409}
+[server] [2026-10-30T06:35:57.407Z] WARN  [http:e177ba3aa17fa182] POST /api/techniques/learn → 409 {"ms":2.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.566Z] INFO  [http:cc5085d1019f8d84] GET /api/techniques/mine → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.724Z] INFO  [http:407a6cf3e1bb2c0c] POST /api/techniques/equip → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:35:57.877Z] INFO  [http:a097ed1f0630671c] GET /api/cultivation/status → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:37:35.371Z] INFO  [http:e36a62f159ebb7d1] HEAD /api/techniques → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:37:35.870Z] INFO  [http:0832e79cb2f85fb5] GET /api/techniques → 200 {"ms":0.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:38:37.091Z] INFO  [http:8c95904fb8f9e15b] GET /api/auth/me → 304 {"ms":2.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:38:37.104Z] INFO  [http:c32791fe7615d4bd] GET /api/cultivation/status → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:38:37.114Z] INFO  [http:6512000ec5373e97] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:38:55.349Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T06:38:55.350Z] INFO  [http:ed9637fb69102254] POST /api/auth/logout → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:38:55.371Z] INFO  [http:5f0a2986dd88234b] GET /api/world/flames → 304 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:00.374Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":250,"jti":"3db9745f-a6d8-40e3-9c1a-eb82844d5f3a"}
+[server] [2026-10-30T06:43:00.375Z] INFO  [http:7a86d28ffdc14ffa] POST /api/auth/login → 200 {"ms":76.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:00.383Z] INFO  [http:843977be85476973] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:00.389Z] INFO  [http:82fbb3e087429a22] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:05.244Z] INFO  [http:1c7f8b16e7b261a1] GET /api/users/me/logs?limit=20&offset=0 → 200 {"ms":1.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:06.076Z] INFO  [http:3c91367ae3601a3e] GET /api/world/flames → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:07.836Z] INFO  [http:a19adb123c335794] GET /api/world/ranks → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:43:08.317Z] INFO  [http:0de06c80b8e319b2] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:44:27.132Z] INFO  [service] 资料已更新 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","fields":["flame","sign"]}
+[server] [2026-10-30T06:44:27.133Z] INFO  [http:3c5302cd2a8abe5e] PATCH /api/users/me → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:47:52.225Z] INFO  [http:2cd491eaa628cb6b] GET /api/world/ranks → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:47:53.010Z] INFO  [http:4737492710e83826] GET /api/world/flames → 304 {"ms":0.5,"ip":"127.0.0.1"}
+[client] [2m14:50:34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/HallView.vue[22m
+[server] [2026-10-30T06:50:34.750Z] INFO  [http:f844779a36f923bd] GET /api/cultivation/status → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:50:34.760Z] INFO  [http:9c167dc621f72927] GET /api/cultivation/leaderboard?limit=20&offset=0 → 304 {"ms":1.7,"ip":"127.0.0.1"}
+[client] [2m14:50:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/HallView.vue[22m
+[server] [2026-10-30T06:50:41.977Z] INFO  [http:af8e55c32be1cd58] GET /api/cultivation/status → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:50:41.993Z] INFO  [http:7829ef2b8b3a7f2e] GET /api/cultivation/leaderboard?limit=20&offset=0 → 304 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:50:47.123Z] INFO  [http:c4ed8fbc991520ab] GET /api/users/me/logs?limit=20&offset=0 → 304 {"ms":1.2,"ip":"127.0.0.1"}
+[client] [2m14:50:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/HallView.vue[22m
+[server] [2026-10-30T06:50:53.092Z] INFO  [http:b2ed4ffbd0c89766] GET /api/world/techniques → 200 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:50:53.093Z] INFO  [http:00284ccadd07b229] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:51:42.102Z] INFO  [http:c7f778d5fc18a457] GET /api/world/techniques → 200 {"ms":0.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:52:16.848Z] INFO  [http:c95e81e4cfb28174] GET /api/auth/me → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:52:16.860Z] INFO  [http:b95edd53b112fef4] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:52:16.872Z] INFO  [http:535b5cc05886652d] GET /api/cultivation/leaderboard?limit=20&offset=0 → 304 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:49.533Z] INFO  [http:97a8c18b4d44d2c9] GET /api/world/techniques → 304 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:49.535Z] INFO  [http:da42677c7f61030f] GET /api/techniques/mine → 304 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:56.262Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"diyanjue","gained":288,"exp":538}
+[server] [2026-10-30T06:58:56.263Z] INFO  [http:17e4c4a5b998a296] POST /api/techniques/learn → 200 {"ms":5.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:56.270Z] INFO  [http:b0464c66e4e7a4ed] GET /api/techniques/mine → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:56.276Z] INFO  [http:1a3807d3c74c7724] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:58.102Z] INFO  [http:644a9f6841b5d3b0] POST /api/techniques/equip → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:58:58.107Z] INFO  [http:47765019b8f4ee03] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:02.411Z] INFO  [http:1c9d61b3d090b442] POST /api/techniques/equip → 200 {"ms":2.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:02.419Z] INFO  [http:d9b6c16c9aedadf7] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:03.677Z] INFO  [http:38c0610ee4c2081f] POST /api/techniques/equip → 200 {"ms":2.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:03.685Z] INFO  [http:8fd064e273009a72] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:06.705Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"fonuhuolian","gained":156,"exp":694}
+[server] [2026-10-30T06:59:06.705Z] INFO  [http:85b9e92dc827ea5f] POST /api/techniques/learn → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:06.710Z] INFO  [http:fd5d9526c40761d5] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:06.719Z] INFO  [http:1e880fe2c346aa2a] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:07.957Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"dahuatianzao","gained":156,"exp":850}
+[server] [2026-10-30T06:59:07.957Z] INFO  [http:d5ef27ef8fc3c43a] POST /api/techniques/learn → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:07.964Z] INFO  [http:af279f5670fbf7c8] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:07.971Z] INFO  [http:02de0c06a22406db] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:09.229Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"leishenjianglin","gained":156,"exp":1006}
+[server] [2026-10-30T06:59:09.230Z] INFO  [http:2004bfba7be90574] POST /api/techniques/learn → 200 {"ms":4.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:09.237Z] INFO  [http:53a1b8508fcff4b0] GET /api/techniques/mine → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:09.243Z] INFO  [http:0c8982ec201f68c7] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:16.037Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"sanqianleidong","gained":120,"exp":1126}
+[server] [2026-10-30T06:59:16.037Z] INFO  [http:d9a5217e0b1168a1] POST /api/techniques/learn → 200 {"ms":3.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:16.052Z] INFO  [http:a5f0008d1486d2c6] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:16.058Z] INFO  [http:7c8bf2d9bcbb7947] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:17.287Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"gangjingliuli","gained":120,"exp":1246}
+[server] [2026-10-30T06:59:17.288Z] INFO  [http:a74636b9a12933e1] POST /api/techniques/learn → 200 {"ms":3.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:17.293Z] INFO  [http:b3af56c3a852cc8c] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:17.301Z] INFO  [http:bfa493e39a61acd6] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:19.588Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"yanfenchilangchi","gained":132,"exp":1378}
+[server] [2026-10-30T06:59:19.589Z] INFO  [http:ecaadf0b7bb32e81] POST /api/techniques/learn → 200 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:19.595Z] INFO  [http:e2801bdc5bbb9222] GET /api/techniques/mine → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:19.603Z] INFO  [http:59fd458f4308900f] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:23.012Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"disanyin","gained":144,"exp":1522}
+[server] [2026-10-30T06:59:23.014Z] INFO  [http:29a549b0ce0912ea] POST /api/techniques/learn → 200 {"ms":4.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:23.020Z] INFO  [http:7d061aacc71374ae] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:23.026Z] INFO  [http:eb92f6d12201b20f] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:28.765Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"qinglianjianjue","gained":132,"exp":1654}
+[server] [2026-10-30T06:59:28.765Z] INFO  [http:ad34aa8437994f88] POST /api/techniques/learn → 200 {"ms":4.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:28.772Z] INFO  [http:0bc62d1aeca41cef] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:28.778Z] INFO  [http:f6b1310e0a2718d6] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:32.507Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"fenjue","gained":12,"exp":1666}
+[server] [2026-10-30T06:59:32.508Z] INFO  [http:e24e244934d78878] POST /api/techniques/learn → 200 {"ms":3.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:32.514Z] INFO  [http:19fdee84d7ba3a7b] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:32.521Z] INFO  [http:06fdec78e4a5e9d4] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.055Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"fengshatiangan","gained":72,"exp":1738}
+[server] [2026-10-30T06:59:38.055Z] INFO  [http:a2b6cd89d3d97c08] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.061Z] INFO  [http:1dc1df40f9aeac53] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.073Z] INFO  [http:967ddc26a39c2247] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.902Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"bajiebeng","gained":72,"exp":1810}
+[server] [2026-10-30T06:59:38.902Z] INFO  [http:c128063f7fa8853c] POST /api/techniques/learn → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.908Z] INFO  [http:f6e10cb6b1adecca] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:38.916Z] INFO  [http:ab7ceb4a8c8ea0fe] GET /api/cultivation/status → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:40.222Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"liuheyoushenchi","gained":84,"exp":1894}
+[server] [2026-10-30T06:59:40.222Z] INFO  [http:c21310e34c9009da] POST /api/techniques/learn → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:40.227Z] INFO  [http:087f7d07e7d07b85] GET /api/techniques/mine → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:40.236Z] INFO  [http:a20e427adc021afd] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:41.844Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"liehuoyaotian","gained":72,"exp":1966}
+[server] [2026-10-30T06:59:41.845Z] INFO  [http:303e9eff9efc98b7] POST /api/techniques/learn → 200 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:41.853Z] INFO  [http:634bbcb6ef8a009e] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:41.859Z] INFO  [http:4a66e101e27479d9] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:43.060Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"ziyunyi","gained":84,"exp":2050}
+[server] [2026-10-30T06:59:43.060Z] INFO  [http:1c054750c1fd2d7f] POST /api/techniques/learn → 200 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:43.068Z] INFO  [http:f11117e131ff25b3] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:43.074Z] INFO  [http:19f433fab845f26d] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:49.274Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"xuanbingjue","gained":120,"exp":2170}
+[server] [2026-10-30T06:59:49.274Z] INFO  [http:392357b3216eb289] POST /api/techniques/learn → 200 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:49.282Z] INFO  [http:1b293bb6870e380f] GET /api/techniques/mine → 200 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:49.289Z] INFO  [http:3172bcd5420b03fa] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.037Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"baizhangtiansuo","gained":120,"exp":2290}
+[server] [2026-10-30T06:59:50.038Z] INFO  [http:a5bbe87a04f7b95f] POST /api/techniques/learn → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.043Z] INFO  [http:5ff1e5b3009a44b7] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.053Z] INFO  [http:cf8ca9837324cf3d] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.930Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"wanhunjue","gained":120,"exp":2410}
+[server] [2026-10-30T06:59:50.931Z] INFO  [http:86c3792483a4289c] POST /api/techniques/learn → 200 {"ms":3.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.937Z] INFO  [http:453ad2b3c201cbe4] GET /api/techniques/mine → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:50.943Z] INFO  [http:47edb138564cfcd0] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:53.853Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"langyaliedi","gained":24,"exp":2434}
+[server] [2026-10-30T06:59:53.854Z] INFO  [http:16dd8f85d417a176] POST /api/techniques/learn → 200 {"ms":4.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:53.860Z] INFO  [http:f4c22eb6499f294b] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:53.870Z] INFO  [http:887a233a01bf94ca] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:54.656Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"qianhubai","gained":36,"exp":2470}
+[server] [2026-10-30T06:59:54.657Z] INFO  [http:7556de7a9a305ba3] POST /api/techniques/learn → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:54.663Z] INFO  [http:218d2030a74e3cca] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T06:59:54.669Z] INFO  [http:6b3e9ae72132895d] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:12.094Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2471}
+[server] [2026-10-30T07:00:12.096Z] INFO  [http:634543fcc1b4768b] POST /api/cultivation/convert → 200 {"ms":4.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:12.105Z] INFO  [http:a6cd9480d81d47f5] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:12.110Z] INFO  [http:83d2a5db5c684c6d] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:17.017Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2472}
+[server] [2026-10-30T07:00:17.019Z] INFO  [http:a0b552c448479fe0] POST /api/cultivation/convert → 200 {"ms":7.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:17.025Z] INFO  [http:e81cc31b8f4dbe5d] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:17.034Z] INFO  [http:b1f7e82bfe9a612e] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:19.408Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2473}
+[server] [2026-10-30T07:00:19.409Z] INFO  [http:673860c55d0b3fae] POST /api/cultivation/convert → 200 {"ms":3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:19.423Z] INFO  [http:4fd4793b11cf98ac] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:19.431Z] INFO  [http:a146ee07665c6700] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":2.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:24.791Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2474}
+[server] [2026-10-30T07:00:24.792Z] INFO  [http:7a1687fc3003d70b] POST /api/cultivation/convert → 200 {"ms":3.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:24.806Z] INFO  [http:9548498ee5eddfd8] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:00:24.813Z] INFO  [http:39949bd54ee9096f] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:02:56.043Z] INFO  [http:435fd7f4fb0ba8f0] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:02:57.286Z] INFO  [http:d0b922180a5eeadf] GET /api/world/techniques → 304 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:02:57.288Z] INFO  [http:23a6db0785add491] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:01.825Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2475}
+[server] [2026-10-30T07:04:01.825Z] INFO  [http:f88a8743f53da854] POST /api/cultivation/convert → 200 {"ms":3.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:01.833Z] INFO  [http:3a5f2262768fe97b] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:01.840Z] INFO  [http:cca619f7a5f8f4d8] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:06.980Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2476}
+[server] [2026-10-30T07:04:06.982Z] INFO  [http:da2392b700902c6c] POST /api/cultivation/convert → 200 {"ms":5.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:06.989Z] INFO  [http:a9a9b6c70c43734b] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:06.994Z] INFO  [http:d595c91dd33c6d45] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:13.452Z] INFO  [service] 魂印熄灭 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx"}
+[server] [2026-10-30T07:04:13.453Z] INFO  [http:79e4f4371236d8b1] POST /api/auth/logout → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:13.470Z] INFO  [http:a10c5d08089b3093] GET /api/world/flames → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:18.779Z] INFO  [service] 魂印共鸣 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","name":"xx","exp":2486,"jti":"35623071-f8ee-4405-a8b8-41ff043af2a4"}
+[server] [2026-10-30T07:04:18.779Z] INFO  [http:633e34f3a323104f] POST /api/auth/login → 200 {"ms":82.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:18.787Z] INFO  [http:10ddeb7dbd5cbc83] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:18.793Z] INFO  [http:1f45828c37526f82] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:21.056Z] INFO  [service] 聚气化修 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","consumedQi":10,"expGain":1,"exp":2487}
+[server] [2026-10-30T07:04:21.056Z] INFO  [http:6fa97b6250ef6890] POST /api/cultivation/convert → 200 {"ms":3.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:21.062Z] INFO  [http:963745a3139ca5bd] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:21.074Z] INFO  [http:9743d9dbe4d1ffc9] GET /api/cultivation/leaderboard?limit=20&offset=0 → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:27.424Z] INFO  [http:62f75aaab320c01a] GET /api/world/techniques → 304 {"ms":0.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:04:27.425Z] INFO  [http:c54f84c7e40727c0] GET /api/techniques/mine → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:06:04.104Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:06:04.184Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:06:04.200Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:06:04.200Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:06:04.200Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:06:04.782Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:06:04.854Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:06:04.868Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:06:04.869Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:06:04.869Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:06:09.719Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:06:09.794Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:06:09.807Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:06:09.807Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:06:09.808Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:06:14.736Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:06:14.810Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:06:14.824Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:06:14.824Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:06:14.824Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:06:20.481Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:06:20.554Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:06:20.569Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:06:20.569Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:06:20.569Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[client] [2m15:07:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueCodex.vue[22m
+[client] [2m15:07:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueCodex.vue[22m
+[client] [2m15:07:44[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueCodex.vue[22m
+[server] [2026-10-30T07:07:44.859Z] INFO  [http:ced819e9aa05c8d2] GET /api/techniques/mine → 200 {"ms":8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:07:44.862Z] INFO  [http:49cb474821c695f9] GET /api/world/techniques → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[client] [2m15:07:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueCodex.vue[22m
+[server] [2026-10-30T07:07:51.098Z] INFO  [http:cdcde81f218bdd34] GET /api/techniques/mine → 304 {"ms":1.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:07:51.101Z] INFO  [http:26566b21d252aec4] GET /api/world/techniques → 304 {"ms":1.3,"ip":"127.0.0.1"}
+[client] [2m15:07:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueCodex.vue?vue&type=style&index=0&scoped=a043e80b&lang.css[22m
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:07:59.752Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[server] [2026-10-30T07:07:59.828Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:07:59.847Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:07:59.847Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:07:59.847Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] [2026-10-30T07:08:07.672Z] INFO  [http:04e70ef048017e49] GET /api/world/techniques → 200 {"ms":4.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:16.220Z] INFO  [http:19c64951b0ef3a5e] GET /api/world/techniques → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:33.267Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"huihuo","gained":180,"exp":2667}
+[server] [2026-10-30T07:08:33.268Z] INFO  [http:05ae69459c071e38] POST /api/techniques/learn → 200 {"ms":26,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:33.275Z] INFO  [http:54fac346c15b3bcb] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:33.287Z] INFO  [http:b7251f17c2324325] GET /api/cultivation/status → 200 {"ms":2.3,"ip":"127.0.0.1"}
+[server] Restarting 'src/index.js'
+[server] [2026-10-30T07:08:33.938Z] WARN  [bootstrap] JWT_SECRET 仍为开发默认值，生产环境必须通过环境变量注入强随机密钥。
+[client] [2m15:08:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/techniques/learn[39m
+[client] AggregateError [ECONNREFUSED]: 
+[client]     at internalConnectMultiple (node:net:1134:18)
+[client]     at afterConnectMultiple (node:net:1715:7)
+[server] [2026-10-30T07:08:34.010Z] INFO  [db] 数据层就绪（驱动：sqlite） {"file":"C:\\Users\\Administrator\\Desktop\\cc-main\\cc-main\\cc-main_extracted\\doupo-app\\server\\data\\doupo.sqlite"}
+[server] [2026-10-30T07:08:34.027Z] INFO  [bootstrap] 斗气大陆通行中枢已开启：http://localhost:3000
+[server] [2026-10-30T07:08:34.027Z] INFO  [bootstrap] 接口入口：/api 与 /api/v1（健康检查 /api/health）
+[server] [2026-10-30T07:08:34.027Z] INFO  [bootstrap] 已托管前端构建产物 client/dist，可直接访问根路径
+[server] [2026-10-30T07:08:35.867Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"zuwen","gained":156,"exp":2823}
+[server] [2026-10-30T07:08:35.870Z] INFO  [http:391e07f4360c5cee] POST /api/techniques/learn → 200 {"ms":27.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:35.876Z] INFO  [http:c9de01ebb0291a12] GET /api/techniques/mine → 200 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:35.889Z] INFO  [http:5a1b463886d39b6f] GET /api/cultivation/status → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:41.053Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"liezhuaoji","gained":24,"exp":2847}
+[server] [2026-10-30T07:08:41.054Z] INFO  [http:8960e1fbd5e7088b] POST /api/techniques/learn → 200 {"ms":4.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:41.063Z] INFO  [http:3cd8b5d33f6db28c] GET /api/techniques/mine → 200 {"ms":2.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:41.077Z] INFO  [http:e4353fad08a391a4] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.205Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"tieshanquan","gained":36,"exp":2883}
+[server] [2026-10-30T07:08:42.206Z] INFO  [http:d6bd9c9fcd943919] POST /api/techniques/learn → 200 {"ms":3.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.214Z] INFO  [http:561efcfe33765b58] GET /api/techniques/mine → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.226Z] INFO  [http:909a7ac4b599e0be] GET /api/cultivation/status → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.901Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"pishanzhang","gained":24,"exp":2907}
+[server] [2026-10-30T07:08:42.902Z] INFO  [http:9356cf2967cc1b43] POST /api/techniques/learn → 200 {"ms":4.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.913Z] INFO  [http:ec10ac8a757bccc2] GET /api/techniques/mine → 200 {"ms":3.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:42.930Z] INFO  [http:da56bd46cd70a513] GET /api/cultivation/status → 200 {"ms":3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.301Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"xielishuijing","gained":36,"exp":2943}
+[server] [2026-10-30T07:08:44.302Z] INFO  [http:910864eda8232812] POST /api/techniques/learn → 200 {"ms":4.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.311Z] INFO  [http:6aeddebac0e7a7db] GET /api/techniques/mine → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.332Z] INFO  [http:896d66df300d139c] GET /api/cultivation/status → 200 {"ms":2.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.933Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"chansheshou","gained":36,"exp":2979}
+[server] [2026-10-30T07:08:44.934Z] INFO  [http:0c7f9e1c335e2c4d] POST /api/techniques/learn → 200 {"ms":5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.941Z] INFO  [http:cdf6db513f88711f] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:44.953Z] INFO  [http:71593669b63088b6] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:45.658Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"xizhang","gained":60,"exp":3039}
+[server] [2026-10-30T07:08:45.658Z] INFO  [http:3394c9758ff27e1e] POST /api/techniques/learn → 200 {"ms":2.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:45.670Z] INFO  [http:d334660fd326f6cf] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:45.683Z] INFO  [http:7deb301ca0b2a961] GET /api/cultivation/status → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:46.611Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"leihusanduanwu","gained":60,"exp":3099}
+[server] [2026-10-30T07:08:46.613Z] INFO  [http:7935805aab04e22d] POST /api/techniques/learn → 200 {"ms":5.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:46.620Z] INFO  [http:b80f0ae15821e6fe] GET /api/techniques/mine → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:46.631Z] INFO  [http:da75c728af532229] GET /api/cultivation/status → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:47.277Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"leifutianyi","gained":60,"exp":3159}
+[server] [2026-10-30T07:08:47.278Z] INFO  [http:2f9bc12bd6dac5b8] POST /api/techniques/learn → 200 {"ms":5.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:47.289Z] INFO  [http:60577a4aaa8f9201] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:47.309Z] INFO  [http:28cf5ea3a2427c0c] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:48.091Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"chuihuozhang","gained":60,"exp":3219}
+[server] [2026-10-30T07:08:48.092Z] INFO  [http:ae4047af24e7d8bc] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:48.101Z] INFO  [http:307fda3f37b9038c] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:48.113Z] INFO  [http:7a475cbcdb2b965a] GET /api/cultivation/status → 200 {"ms":2.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:49.206Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"dieyan","gained":60,"exp":3279}
+[server] [2026-10-30T07:08:49.206Z] INFO  [http:ab1eb1bef123039a] POST /api/techniques/learn → 200 {"ms":4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:49.215Z] INFO  [http:8070eaf61ce290d9] GET /api/techniques/mine → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:49.228Z] INFO  [http:1ded82bc8b924eb1] GET /api/cultivation/status → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:50.724Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"shuiwanduoluo","gained":72,"exp":3351}
+[server] [2026-10-30T07:08:50.725Z] INFO  [http:118fa7cd4fd92c3a] POST /api/techniques/learn → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:50.734Z] INFO  [http:689c91c08408001c] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:50.744Z] INFO  [http:c27841fc465e3bd2] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:51.427Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"dielang","gained":72,"exp":3423}
+[server] [2026-10-30T07:08:51.429Z] INFO  [http:0fd13f8ef002c319] POST /api/techniques/learn → 200 {"ms":5.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:51.437Z] INFO  [http:8df6b1b81f855933] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:51.451Z] INFO  [http:23b6413b2d8837a9] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:52.180Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"renwang","gained":72,"exp":3495}
+[server] [2026-10-30T07:08:52.181Z] INFO  [http:3006a1d6f128f69a] POST /api/techniques/learn → 200 {"ms":5.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:52.189Z] INFO  [http:5e91f5221d6132b8] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:52.204Z] INFO  [http:4e6b8521c4edba12] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.324Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"shihusuijinyin","gained":84,"exp":3579}
+[server] [2026-10-30T07:08:54.325Z] INFO  [http:109c5c4a373efb30] POST /api/techniques/learn → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.333Z] INFO  [http:8c8872348ef7717b] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.344Z] INFO  [http:0603a8349aae852c] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.940Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"hunshouyin","gained":84,"exp":3663}
+[server] [2026-10-30T07:08:54.940Z] INFO  [http:908b90fddf850c95] POST /api/techniques/learn → 200 {"ms":4.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.947Z] INFO  [http:02e2dae823ddb141] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:54.960Z] INFO  [http:188ba84b0113e695] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:55.917Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"hanleidihubao","gained":84,"exp":3747}
+[server] [2026-10-30T07:08:55.918Z] INFO  [http:e40adb0428486189] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:55.925Z] INFO  [http:aa7cfd13bb3efe5e] GET /api/techniques/mine → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:55.941Z] INFO  [http:4f3126f134b22eb6] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:56.604Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"fengshazhi","gained":84,"exp":3831}
+[server] [2026-10-30T07:08:56.605Z] INFO  [http:73288fa95a11fa69] POST /api/techniques/learn → 200 {"ms":2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:56.613Z] INFO  [http:39dea62dfa9ac4f5] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:56.626Z] INFO  [http:00fcf459c3deb6f6] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:58.259Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"nongyanjue","gained":120,"exp":3951}
+[server] [2026-10-30T07:08:58.260Z] INFO  [http:ed87184459ace6e4] POST /api/techniques/learn → 200 {"ms":3.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:58.269Z] INFO  [http:5c766bc1ca984f1b] GET /api/techniques/mine → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:58.280Z] INFO  [http:98ef08dc48d4ae6d] GET /api/cultivation/status → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:59.735Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"sanshoumanhuangjue","gained":120,"exp":4071}
+[server] [2026-10-30T07:08:59.736Z] INFO  [http:cfab00a755df609a] POST /api/techniques/learn → 200 {"ms":5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:59.744Z] INFO  [http:d0581a0d3a7e4ebe] GET /api/techniques/mine → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:08:59.759Z] INFO  [http:3d422d8b9b6ba158] GET /api/cultivation/status → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:00.486Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"xuebian","gained":120,"exp":4191}
+[server] [2026-10-30T07:09:00.487Z] INFO  [http:94ff4991578f33cb] POST /api/techniques/learn → 200 {"ms":4.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:00.493Z] INFO  [http:e83c531851f4ef22] GET /api/techniques/mine → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:00.510Z] INFO  [http:1bdf6638a704f12c] GET /api/cultivation/status → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:01.418Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"shiguyuanbiwu","gained":120,"exp":4311}
+[server] [2026-10-30T07:09:01.419Z] INFO  [http:d615f5f4560bae70] POST /api/techniques/learn → 200 {"ms":3.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:01.426Z] INFO  [http:5fa7381816b7b689] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:01.445Z] INFO  [http:31b5dfe40972c8d2] GET /api/cultivation/status → 200 {"ms":1.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:02.484Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"tianyanjiuxingyi","gained":120,"exp":4431}
+[server] [2026-10-30T07:09:02.485Z] INFO  [http:d547534abcfe8dc7] POST /api/techniques/learn → 200 {"ms":4.3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:02.492Z] INFO  [http:4586fde81e241c8c] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:02.506Z] INFO  [http:783912fc1ab8dbe0] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:05.940Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"huangquanfusibi","gained":120,"exp":4551}
+[server] [2026-10-30T07:09:05.941Z] INFO  [http:eb80ea7b929b7971] POST /api/techniques/learn → 200 {"ms":4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:05.949Z] INFO  [http:453ae544c1608670] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:05.961Z] INFO  [http:cf6c415f7a43be3c] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:12.151Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"baobu","gained":72,"exp":4623}
+[server] [2026-10-30T07:09:12.152Z] INFO  [http:87d3c4e29c981a90] POST /api/techniques/learn → 200 {"ms":2.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:12.158Z] INFO  [http:91d9f777ec682412] GET /api/techniques/mine → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:12.171Z] INFO  [http:b0ea6ee9b9c58540] GET /api/cultivation/status → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:13.133Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"kuangshinugang","gained":72,"exp":4695}
+[server] [2026-10-30T07:09:13.134Z] INFO  [http:a484c1dbbc0a0adf] POST /api/techniques/learn → 200 {"ms":3.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:13.141Z] INFO  [http:e329b5108110ac53] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:13.156Z] INFO  [http:20d68e266f499b2f] GET /api/cultivation/status → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:15.738Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"sanqianleihuanshen","gained":132,"exp":4827}
+[server] [2026-10-30T07:09:15.738Z] INFO  [http:3389fbf2aec66434] POST /api/techniques/learn → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:15.746Z] INFO  [http:3c106a89a3bfbcea] GET /api/techniques/mine → 200 {"ms":2.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:15.758Z] INFO  [http:658c346143a7e69f] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:16.501Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"tianhuosanxuanbian","gained":132,"exp":4959}
+[server] [2026-10-30T07:09:16.501Z] INFO  [http:06e5a14b4f491ad1] POST /api/techniques/learn → 200 {"ms":3.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:16.508Z] INFO  [http:d407a3487283a8a0] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:16.520Z] INFO  [http:fda085a335df2c47] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:17.574Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"senluodaxingshou","gained":132,"exp":5091}
+[server] [2026-10-30T07:09:17.575Z] INFO  [http:2624821aa359e67d] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:17.583Z] INFO  [http:5ba2647fe4bc1d42] GET /api/techniques/mine → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:17.597Z] INFO  [http:c6e51e2a1dfe169e] GET /api/cultivation/status → 200 {"ms":1.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:18.557Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"zhaixing","gained":132,"exp":5223}
+[server] [2026-10-30T07:09:18.558Z] INFO  [http:80b6626867bd6184] POST /api/techniques/learn → 200 {"ms":2.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:18.566Z] INFO  [http:1f6c5cd83c51a434] GET /api/techniques/mine → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:18.576Z] INFO  [http:24dd2e4e69501f43] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:19.189Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"qicaidujing","gained":132,"exp":5355}
+[server] [2026-10-30T07:09:19.190Z] INFO  [http:d14e37c695717299] POST /api/techniques/learn → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:19.198Z] INFO  [http:3534a731c16758da] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:19.207Z] INFO  [http:69959e42c4c1cbd3] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.053Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"wulunlihuofa","gained":132,"exp":5487}
+[server] [2026-10-30T07:09:20.053Z] INFO  [http:6d923ab7dfc34a2f] POST /api/techniques/learn → 200 {"ms":1.6,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.069Z] INFO  [http:3123dc573a088a30] GET /api/techniques/mine → 200 {"ms":1.5,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.080Z] INFO  [http:1ab096ffc8001d60] GET /api/cultivation/status → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.745Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"suixingzhan","gained":132,"exp":5619}
+[server] [2026-10-30T07:09:20.746Z] INFO  [http:9f5f29df9dd1d078] POST /api/techniques/learn → 200 {"ms":3,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.752Z] INFO  [http:fcac91b4bcf6e6db] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:20.763Z] INFO  [http:ffeab9aced0496b4] GET /api/cultivation/status → 200 {"ms":0.9,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:21.021Z] INFO  [http:84910076803e0e68] GET /api/world/techniques → 200 {"ms":1.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:22.275Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"tianmingshoulou","gained":132,"exp":5751}
+[server] [2026-10-30T07:09:22.276Z] INFO  [http:c6ee0fe25f7550ec] POST /api/techniques/learn → 200 {"ms":4.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:22.283Z] INFO  [http:3f30b920bc8400d3] GET /api/techniques/mine → 200 {"ms":1.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:22.299Z] INFO  [http:c52ee7b4936306a4] GET /api/cultivation/status → 200 {"ms":2.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:23.701Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"xuehanjihantian","gained":132,"exp":5883}
+[server] [2026-10-30T07:09:23.702Z] INFO  [http:63f3adbb8b59f0b0] POST /api/techniques/learn → 200 {"ms":4.2,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:23.709Z] INFO  [http:d7c6fca916eeb95a] GET /api/techniques/mine → 200 {"ms":1.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:23.724Z] INFO  [http:78b3cb09c57b675d] GET /api/cultivation/status → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:24.844Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"bishethousanhuatong","gained":204,"exp":6087}
+[server] [2026-10-30T07:09:24.845Z] INFO  [http:c0a7a8d4b0f03e11] POST /api/techniques/learn → 200 {"ms":4.4,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:24.852Z] INFO  [http:6b4d4033a812c011] GET /api/techniques/mine → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:24.861Z] INFO  [http:ee5c4f5459be47d3] GET /api/cultivation/status → 200 {"ms":1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:26.756Z] INFO  [service] 参悟功法 {"userId":"2cb40b4f-b8b9-4b82-a036-60c0b8cd6279","value":"taiyihunjue","gained":228,"exp":6315}
+[server] [2026-10-30T07:09:26.757Z] INFO  [http:797d3d113e66d893] POST /api/techniques/learn → 200 {"ms":5.1,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:26.767Z] INFO  [http:02726050fca07bcf] GET /api/techniques/mine → 200 {"ms":1.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:09:26.780Z] INFO  [http:47a4c9883aa351a1] GET /api/cultivation/status → 200 {"ms":1.8,"ip":"127.0.0.1"}
+[client] [2m15:09:30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueSigil.vue[22m
+[client] [2m15:09:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueSigil.vue[22m
+[server] [2026-10-30T07:09:58.416Z] INFO  [http:072b37c4346db6ff] GET /api/world/techniques → 200 {"ms":0.6,"ip":"127.0.0.1"}
+[client] [2m15:10:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueSigil.vue[22m
+[client] [2m15:11:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/TechniqueSigil.vue[22m
+[server] [2026-10-30T07:11:20.444Z] INFO  [http:d55a169ba331afb7] GET /api/world/techniques → 200 {"ms":0.7,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:11:21.711Z] INFO  [http:835091981ffae52c] GET /api/techniques → 200 {"ms":0.8,"ip":"127.0.0.1"}
+[server] [2026-10-30T07:12:26.351Z] INFO  [http:b1ea477ac3e54c13] GET /api/world/techniques → 200 {"ms":1.7,"ip":"127.0.0.1"}
