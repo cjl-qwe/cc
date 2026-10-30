@@ -1,0 +1,29 @@
+logging.pattern.console=2026-10-15 14:54:25  INFO c.fenglin.springboottest.SpringBootTestApplication.logStarting 53:Starting SpringBootTestApplication using Java 21.0.10 with PID 9852 (D:\workSpace\springBootTest\target\classes started by Administrator in D:\workSpace\springBootTest)
+logging.pattern.console=2026-10-15 14:54:25  INFO c.fenglin.springboottest.SpringBootTestApplication.logStartupProfileInfo 658:The following 1 profile is active: "dev"
+logging.pattern.console=2026-10-15 14:54:25  INFO o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor.logTo 252:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+logging.pattern.console=2026-10-15 14:54:25  INFO o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor.logTo 252:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+logging.pattern.console=2026-10-15 14:54:26  INFO o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize 111:Tomcat initialized with port 62678 (http)
+logging.pattern.console=2026-10-15 14:54:26  INFO org.apache.catalina.core.StandardService.log 168:Starting service [Tomcat]
+logging.pattern.console=2026-10-15 14:54:26  INFO org.apache.catalina.core.StandardEngine.log 168:Starting Servlet engine: [Apache Tomcat/10.1.40]
+logging.pattern.console=2026-10-15 14:54:26  INFO o.a.c.core.ContainerBase.[Tomcat].[localhost].[/].log 168:Initializing Spring embedded WebApplicationContext
+logging.pattern.console=2026-10-15 14:54:26  INFO o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext 301:Root WebApplicationContext: initialization completed in 820 ms
+logging.pattern.console=2026-10-15 14:54:26  INFO o.s.b.a.web.servlet.WelcomePageHandlerMapping.<init> 59:Adding welcome page: class path resource [static/index.html]
+logging.pattern.console=2026-10-15 14:54:26  INFO o.s.b.d.autoconfigure.OptionalLiveReloadServer.startServer 59:LiveReload server is running on port 35729
+logging.pattern.console=2026-10-15 14:54:26  WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh 635:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+logging.pattern.console=2026-10-15 14:54:26  INFO o.s.b.a.logging.ConditionEvaluationReportLogger.logMessage 82:
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+logging.pattern.console=2026-10-15 14:54:26  ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter.report 40:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 62678 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 62678 or configure this application to listen on another port.
+
