@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户注册</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: "Microsoft YaHei", "PingFang SC", Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 55%, #e0f2fe 100%);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            padding: 32px 28px 26px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, .10), 0 2px 6px rgba(15, 23, 42, .06);
+        }
+
+        .card h2 {
+            margin: 0 0 6px;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            color: #111827;
+        }
+
+        .subtitle {
+            margin: 0 0 22px;
+            font-size: 13px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .field { margin-bottom: 16px; }
+
+        .field label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .field input {
+            width: 100%;
+            height: 40px;
+            padding: 0 12px;
+            font-size: 14px;
+            color: #111827;
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color .16s, box-shadow .16s, background .16s;
+        }
+
+        .field input:focus {
+            background: #fff;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, .16);
+        }
+
+        .field input.invalid {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, .14);
+        }
+
+        .tip {
+            display: none;
+            margin-top: 6px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #ef4444;
+        }
+
+        .tip.show { display: block; }
+
+        .agree {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 4px 0 18px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .agree input { margin-top: 2px; accent-color: #6366f1; }
+
+        button[type="submit"] {
+            width: 100%;
+            height: 42px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: filter .16s, transform .06s;
+        }
+
+        button[type="submit"]:hover { filter: brightness(1.06); }
+        button[type="submit"]:active { transform: translateY(1px); }
+
+        .foot {
+            margin-top: 18px;
+            font-size: 13px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .foot a { color: #4f46e5; text-decoration: none; }
+        .foot a:hover { text-decoration: underline; }
+
+        .alert {
+            margin-bottom: 16px;
+            padding: 9px 12px;
+            font-size: 13px;
+            color: #b91c1c;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+        }
+
+        .alert.ok {
+            color: #047857;
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-7px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(3px); }
+        }
+
+        .card.shake { animation: shake .45s ease; }
+    </style>
+</head>
+<body>
+<div class="card" id="card">
+    <h2>用户注册</h2>
+    <p class="subtitle">创建你的账号，开启新的旅程</p>
+
+    <!-- 提交结果的提示区：校验失败为红色，演示成功为绿色 -->
+    <div class="alert" id="okBox" style="display:none;"></div>
+
+    <form id="registerForm" novalidate>
+        <div class="field">
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" placeholder="3-16 位字母、数字或下划线"
+                   autocomplete="username">
+            <p class="tip" id="tip-username"></p>
+        </div>
+
+        <div class="field">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" placeholder="不少于 6 位"
+                   autocomplete="new-password">
+            <p class="tip" id="tip-password"></p>
+        </div>
+
+        <div class="field">
+            <label for="confirmPassword">确认密码</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码"
+                   autocomplete="new-password">
+            <p class="tip" id="tip-confirmPassword"></p>
+        </div>
+
+        <div class="field">
+            <label for="email">邮箱（选填）</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" autocomplete="email">
+            <p class="tip" id="tip-email"></p>
+        </div>
+
+        <label class="agree">
+            <input type="checkbox" id="agree" name="agree">
+            <span>我已阅读并同意《用户服务协议》</span>
+        </label>
+
+        <button type="submit">注 册</button>
+    </form>
+
+    <p class="foot">已有账号？<a href="/user/to_login">返回登录</a></p>
+</div>
+
+<script>
+(function () {
+    var card = document.getElementById('card');
+    var form = document.getElementById('registerForm');
+    var okBox = document.getElementById('okBox');
+
+    var rules = {
+        username: function (v) {
+            if (!v) return '请输入用户名';
+            if (!/^[A-Za-z0-9_]{3,16}$/.test(v)) return '用户名为 3-16 位字母、数字或下划线';
+            return '';
+        },
+        password: function (v) {
+            if (!v) return '请输入密码';
+            if (v.length < 6) return '密码长度不能少于 6 位';
+            return '';
+        },
+        confirmPassword: function (v) {
+            if (!v) return '请再次输入密码';
+            if (v !== document.getElementById('password').value) return '两次输入的密码不一致';
+            return '';
+        },
+        email: function (v) {
+            if (!v) return '';
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return '邮箱格式不正确';
+            return '';
+        }
+    };
+
+    function showTip(name, msg) {
+        var input = document.getElementById(name);
+        var tip = document.getElementById('tip-' + name);
+        if (msg) {
+            input.classList.add('invalid');
+            tip.textContent = msg;
+            tip.classList.add('show');
+        } else {
+            input.classList.remove('invalid');
+            tip.textContent = '';
+            tip.classList.remove('show');
+        }
+        return !msg;
+    }
+
+    function validateField(name) {
+        return showTip(name, rules[name](document.getElementById(name).value.trim()));
+    }
+
+    Object.keys(rules).forEach(function (name) {
+        var input = document.getElementById(name);
+        // 失焦校验；已报错的字段在输入时实时纠正
+        input.addEventListener('blur', function () { validateField(name); });
+        input.addEventListener('input', function () {
+            if (input.classList.contains('invalid')) validateField(name);
+        });
+    });
+
+    function shake() {
+        card.classList.remove('shake');
+        void card.offsetWidth;
+        card.classList.add('shake');
+        window.setTimeout(function () { card.classList.remove('shake'); }, 480);
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        okBox.style.display = 'none';
+
+        var ok = true;
+        Object.keys(rules).forEach(function (name) {
+            if (!validateField(name)) ok = false;
+        });
+
+        var agree = document.getElementById('agree');
+        if (!agree.checked) {
+            ok = false;
+            showAlert('请先阅读并同意《用户服务协议》');
+        }
+
+        if (!ok) { shake(); return; }
+
+        // 仅前端演示：未接入后端接口，此处只做提交成功提示
+        okBox.className = 'alert ok';
+        okBox.textContent = '注册信息校验通过 —— ' + document.getElementById('username').value.trim()
+            + '，后续接入 /user/register 接口即可完成注册。';
+        okBox.style.display = 'block';
+    });
+
+    function showAlert(text) {
+        okBox.className = 'alert';
+        okBox.textContent = text;
+        okBox.style.display = 'block';
+    }
+})();
+</script>
+</body>
+</html>
